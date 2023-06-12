@@ -18,7 +18,7 @@ export default function NewSkillForm({ addSkill }) {
 
     }
 
-    function handleEditSkill(e) {
+    function handleChangeSkill(e) {
         setNewSkill({
             ...newSkill,
             [e.target.name]: e.target.value
@@ -29,7 +29,7 @@ export default function NewSkillForm({ addSkill }) {
         <form className="NewSkillForm" onSubmit={handleAddSkill}>
             Skill:<input type="text" name="name"
                 value={newSkill.name}
-                onChange={handleEditSkill}
+                onChange={handleChangeSkill}
                 required
                 pattern='.{4,}'
             />
@@ -37,7 +37,7 @@ export default function NewSkillForm({ addSkill }) {
             <select
                 name="level"
                 value={newSkill.level}
-                onChange={handleEditSkill}
+                onChange={handleChangeSkill}
             >
                 <option value={1}>1</option>
                 <option value={2}>2</option>
